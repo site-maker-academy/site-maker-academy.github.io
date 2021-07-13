@@ -630,7 +630,7 @@ button,
 
 .add-btn {
   position: absolute;
-  display: none;
+  display: none; 
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -639,6 +639,9 @@ button,
   align-items: center;
   width: 40px;
   height: 40px;
+  background-image: url(../img/svg/icon-add.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 0;
   border: none;
   border-radius: 50%;
@@ -867,8 +870,8 @@ button,
   top: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
   background: url(../img/svg/icon-photo.svg) no-repeat center;
 }
 
@@ -1021,6 +1024,7 @@ button,
 .grid-select__btn {
   display: inline-block;
   width: 280px;
+  min-height: 200px;
   padding: 14px 20px 9px;
   margin-right: 15px;
   background-color: #ffffff;
@@ -1029,6 +1033,19 @@ button,
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 51px;
+}
+
+.grid-select__btn[for="grid-landing"]{
+  background-image: url('../img/svg/lending-grid.svg');
+}
+.grid-select__btn[for="grid-blog"]{
+  background-image: url('../img/svg/blog-grid.svg');
+}
+.grid-select__btn[for="grid-shop"]{
+  background-image: url('../img/svg/shop-grid.svg');
 }
 
 .grid-select__btn:hover,
@@ -1037,10 +1054,22 @@ button,
   background-color: #80ccf0;
 }
 
-.grid-select__btn:hover .grid-select__img,
-.grid-select__radio:focus + .grid-select__btn .grid-select__img,
-.grid-select__radio:checked + .grid-select__btn .grid-select__img {
-  stroke: #ffffff;
+.grid-select__btn[for="grid-landing"]:hover,
+.grid-select__radio:focus + .grid-select__btn[for="grid-landing"],
+.grid-select__radio:checked + .grid-select__btn[for="grid-landing"] {
+  background-image: url('../img/svg/lending-grid-active.svg');
+}
+
+.grid-select__btn[for="grid-blog"]:hover,
+.grid-select__radio:focus + .grid-select__btn[for="grid-blog"],
+.grid-select__radio:checked + .grid-select__btn[for="grid-blog"] {
+  background-image: url('../img/svg/blog-grid-active.svg');
+}
+
+.grid-select__btn[for="grid-shop"]:hover,
+.grid-select__radio:focus + .grid-select__btn[for="grid-shop"],
+.grid-select__radio:checked + .grid-select__btn[for="grid-shop"] {
+  background-image: url('../img/svg/shop-grid-active.svg');
 }
 
 .grid-select__btn:hover .grid-select__text,
@@ -1048,6 +1077,9 @@ button,
 .grid-select__radio:checked + .grid-select__btn .grid-select__text {
   color: #ffffff;
 }
+
+
+
 
 .footer {
   -ms-grid-row: 3;
